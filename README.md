@@ -1,6 +1,6 @@
 # 📌 Atividade de Java
 
-Este repositório contém uma atividade desenvolvida em **Java**, com o objetivo de praticar conceitos fundamentais da linguagem e da **Programação Orientada a Objetos (POO)**.
+Este repositório contém uma atividade desenvolvida em **Java**.
 
 ---
 
@@ -8,8 +8,10 @@ Este repositório contém uma atividade desenvolvida em **Java**, com o objetivo
 
 Aplicar na prática os conhecimentos adquiridos em aula, como:
 
-- Lógica de programação  
-- Estrutura de classes e métodos   
+- Lógica de programação
+- Variáveis
+- Operadores
+- Tipos primitivos 
 - Organização de código  
 - Boas práticas em Java  
 
@@ -17,9 +19,9 @@ Aplicar na prática os conhecimentos adquiridos em aula, como:
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Java** (JDK 8 ou superior)
-- **IDE**: IntelliJ IDEA / Eclipse / VS Code
-- **Git & GitHub** (versionamento de código)
+- **Java**
+- **IDE**: IntelliJ IDEA
+- **Git & GitHub**
 
 ---
 
