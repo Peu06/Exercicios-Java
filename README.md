@@ -1,6 +1,6 @@
 # 📌 Atividade de Java
 
-Este repositório contém uma atividade desenvolvida em **Java**.
+Este repositório contém atividades desenvolvidas em **Java**.
 
 ---
 
