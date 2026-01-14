@@ -3,12 +3,9 @@ package Carro;
 public class TesteCarro {
 
     public static void main(String[]args){
-        Carro van = new Carro();
-        van.marca = "Fiat";
-        van.modelo = "Ducato";
-        van.numPassageiros = 10;
-        van.capCombustivel = 90;
-        van.consumoCombustivel = 0.9;
+
+        Carro van = new Carro("Fiat", "Ducato", 10, 90, 0.9);
+
 
         van.exibirAutonomia();
 

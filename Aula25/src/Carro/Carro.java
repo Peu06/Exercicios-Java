@@ -2,11 +2,24 @@ package Carro;
 
 public class Carro {
 
+
+
     String marca;
     String modelo;
     int numPassageiros;
     double capCombustivel;
     double consumoCombustivel;
+
+    Carro(){}
+
+    //Construtor
+    public Carro(String marca_, String modelo_, int numPassageiros_, double capCombustivel_, double consumoCombustivel_) {
+        this.marca = marca_;
+        this.modelo = modelo_;
+        this.numPassageiros = numPassageiros_;
+        this.capCombustivel = capCombustivel_;
+        this.consumoCombustivel = consumoCombustivel_;
+    }
 
 
     //void = sem return

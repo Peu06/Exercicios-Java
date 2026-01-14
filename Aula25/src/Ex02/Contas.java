@@ -2,7 +2,7 @@ package Ex02;
 
 public class Contas {
     String numConta;
-    double saldo;
+    private double saldo;
     boolean especial;
     double limite;
 
