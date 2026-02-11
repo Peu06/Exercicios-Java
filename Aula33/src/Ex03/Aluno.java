@@ -2,36 +2,38 @@ package Ex03;
 
 public class Aluno {
 
-    private String nomeAluno;
-    private int matricula;
+    private String nome;
+    private String matricula;
     private String curso;
-    private Materia[] materias;
-    private int indice = 0;
+    private String[] nomeDisciplinas;
+    private double[][] notasDisciplinas;
 
     public Aluno(){
-        this("", 0, "");
+        nomeDisciplinas = new String[3];
+        notasDisciplinas = new double[3][4];
     }
 
-    public Aluno(String nomeAluno, int matricula, String curso){
-        this.nomeAluno = nomeAluno;
+    public Aluno(String nome, String matricula, String curso){
+        this.nome = nome;
         this.matricula = matricula;
         this.curso = curso;
-        this.materias = new Materia[3];
+        this.nomeDisciplinas = new String[3];
+        this.notasDisciplinas = new double[3][4];
     }
 
-    public String getNomeAluno() {
-        return nomeAluno;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeAluno(String nomeAluno) {
-        this.nomeAluno = nomeAluno;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public int getMatricula() {
+    public String getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(int matricula) {
+    public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
@@ -43,45 +45,63 @@ public class Aluno {
         this.curso = curso;
     }
 
-    public Materia[] getMaterias() {
-        return materias;
+    public String[] getNomeDisciplinas() {
+        return nomeDisciplinas;
     }
 
-    public void setMaterias(Materia[] materias) {
-        this.materias = materias;
+    public void setNomeDisciplinas(String[] nomeDisciplinas) {
+        this.nomeDisciplinas = nomeDisciplinas;
     }
 
-    public int getIndice() {
-        return indice;
+    public double[][] getNotasDisciplinas() {
+        return notasDisciplinas;
     }
 
-    public void setIndice(int indice) {
-        this.indice = indice;
+    public void setNotasDisciplinas(double[][] notasDisciplinas) {
+        this.notasDisciplinas = notasDisciplinas;
     }
 
-    public void adicionarMateria(String nomeMateria, double nota){
-        if (indice < materias.length){
-            materias[indice] = new Materia(nomeMateria, nota);
-            indice++;
-        }else{
-            System.out.println("Limite de matérias atingido.");
-        }
-    }
-
-    public void mostarInfos(){
-        System.out.println("Nome: " + nomeAluno);
+    public void mostrarInfo(){
+        System.out.println("Nome: " + nome);
         System.out.println("Matrícula: " + matricula);
         System.out.println("Curso: " + curso);
 
-        for (Materia m : materias){
-            if (m != null){
-                if(m.getNota() >= 7){
-                    System.out.println(m.getNomeMateria() + " - Aprovado - Nota: " + m.getNota());
-                }else{
-                    System.out.println(m.getNomeMateria() + " - Reprovado - Nota: " + m.getNota());
-                }
-
+        for (int i = 0; i<notasDisciplinas.length; i++){
+            System.out.println("Notas da disciplina: " + nomeDisciplinas[i]);
+            for (int j = 0; j<notasDisciplinas[i].length; j++){
+                System.out.println(notasDisciplinas[i][j] + " ");
             }
+            System.out.println();
         }
     }
+
+    public boolean verificarAprovado(int indice){
+
+        if (obterMedia(indice) >= 7){
+            return true;
+        }
+
+        return false;
+    }
+
+    private double obterMedia(int indice){
+
+        double soma = 0;
+
+        for (int i = 0; i < notasDisciplinas[indice].length; i++){
+            soma += notasDisciplinas[indice][i];
+        }
+
+        return soma / 4;
+    }
+
+    public void setNomeDisciplinaPos(int pos, String nomeDisciplina){
+        this.nomeDisciplinas[pos] = nomeDisciplina;
+    }
+
+    public void setNomePosIJ(int posI, int posJ, double nota){
+        this.notasDisciplinas[posI][posJ] = nota;
+    }
+
+
 }

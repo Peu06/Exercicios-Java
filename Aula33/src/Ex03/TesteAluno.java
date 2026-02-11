@@ -1,21 +1,45 @@
 package Ex03;
+import java.util.Scanner;
+
 
 public class TesteAluno {
 
     public static void main(String[]args){
 
-        Aluno a = new Aluno();
-        a.setNomeAluno("João");
-        a.setMatricula(12345);
-        a.setCurso("ADS");
+        Scanner scan = new Scanner(System.in);
 
-        a.adicionarMateria("POO", 8.5);
-        a.adicionarMateria("Banco de Dados", 9.0);
-        a.adicionarMateria("Estrutura de Dados", 6.0);
+        Aluno aluno = new Aluno();
 
-        a.mostarInfos();
+        System.out.println("Entre com o nome do aluno: ");
+        aluno.setNome(scan.nextLine());
 
-        a.getMaterias();
+        System.out.println("Entre com o nome do curso: ");
+        aluno.setCurso(scan.nextLine());
 
+        System.out.println("Entre com a matricula: ");
+        aluno.setMatricula(scan.next());
+
+        for (int i=0; i<aluno.getNotasDisciplinas().length; i++){
+            System.out.println("Entre com o nome da disciplina " + i);
+            aluno.setNomeDisciplinaPos(i, scan.next());
+        }
+
+        for (int i=0; i<aluno.getNotasDisciplinas().length; i++){
+            System.out.println("Obtendo notas da disciplina " + aluno.getNomeDisciplinas()[i]);
+            for (int j=0; j<aluno.getNotasDisciplinas()[i].length; j++){
+            System.out.println("Entre com a nota " + (j+1));
+            aluno.setNomePosIJ(i, j, scan.nextDouble());
+            }
+        }
+
+        aluno.mostrarInfo();
+
+        for (int i=0; i < aluno.getNomeDisciplinas().length; i++){
+            if (aluno.verificarAprovado(i)){
+                System.out.println("Disciplina " + aluno.getNomeDisciplinas()[i] + " - foi aprovado");
+            } else{
+                System.out.println("Disciplina " + aluno.getNomeDisciplinas()[i] + " - reprovado");
+            }
+        }
     }
 }
